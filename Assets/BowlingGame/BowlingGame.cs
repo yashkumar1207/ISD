@@ -170,7 +170,7 @@ public class BowlingGame : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Box(new Rect(18,16,360,205),"BOWLING NIGHT");
+        GUI.Box(new Rect(18,16,360,290),"BOWLING NIGHT");
         GUI.Label(new Rect(34,48,330,24),"Frame: "+frame+" / 10     Roll: "+(rollInFrame+1));
         GUI.Label(new Rect(34,75,330,24),"Score: "+totalScore+" pins");
         GUI.Label(new Rect(34,102,330,38),status);
@@ -179,7 +179,8 @@ public class BowlingGame : MonoBehaviour
         if(GUI.Button(new Rect(34,174,130,34),"◀ AIM")) aim=Mathf.Max(-1.25f,aim-.2f);
         if(GUI.Button(new Rect(174,174,130,34),"AIM ▶")) aim=Mathf.Min(1.25f,aim+.2f);
         if(GUI.Button(new Rect(34,216,270,42),"ROLL  •  SPACE")) Roll();
+        if(GUI.Button(new Rect(34,264,270,34),"RESTART GAME")) RestartGame();
         GUI.enabled=true;
-        GUI.Label(new Rect(18,Screen.height-36,600,28),"Keyboard: A / D aim   •   W / S power   •   SPACE roll");
+        GUI.Label(new Rect(18,Screen.height-36,600,28),"Keyboard: A / D aim   •   W / S power   •   SPACE roll   •   R restart");
     }
 }
