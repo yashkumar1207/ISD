@@ -106,12 +106,23 @@ public class BowlingGame : MonoBehaviour
     void Update()
     {
         if(rolling || resolving) return;
+        if(Input.GetKeyDown(KeyCode.R)) RestartGame();
         if(Input.GetKeyDown(KeyCode.A)) aim=Mathf.Max(-1.25f,aim-.15f);
         if(Input.GetKeyDown(KeyCode.D)) aim=Mathf.Min(1.25f,aim+.15f);
         if(Input.GetKeyDown(KeyCode.W)) power=Mathf.Min(25,power+1);
         if(Input.GetKeyDown(KeyCode.S)) power=Mathf.Max(10,power-1);
         ball.transform.position=new Vector3(aim,.55f,-3);
         if(Input.GetKeyDown(KeyCode.Space)) Roll();
+    }
+
+    void RestartGame()
+    {
+        if(rolling || resolving) return;
+        frame=1; rollInFrame=0; totalScore=0; framePins=0; firstRollPins=0;
+        aim=0; power=18; status="Game restarted. Aim and roll when ready.";
+        ResetPins();
+        if(ball) Destroy(ball);
+        SpawnBall();
     }
 
     void Roll()
