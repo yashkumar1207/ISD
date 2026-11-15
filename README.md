@@ -11,5 +11,6 @@ Open this folder in Unity 6000.6.3f1, then press Play in the SampleScene.
 - A / D: aim left or right
 - W / S: adjust power
 - Space or the on-screen ROLL button: roll
+- R or the on-screen RESTART GAME button: reset the game
 
-The game tracks knocked pins across ten frames and reports strikes and spares. No external models are required.
+The game tracks knocked pins across ten frames and reports strikes and spares. Restarting clears the current score and restores the full rack. No external models are required.
